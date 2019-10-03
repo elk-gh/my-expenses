@@ -5,5 +5,5 @@
     "**/bower_components": true,
     "**/.sfdx": true
   },
-  "eslint.nodePath": "c:\\Users\\elkin\\.vscode\\extensions\\salesforce.salesforcedx-vscode-lwc-46.16.0\\node_modules"
+  "eslint.nodePath": "c:\\Users\\ecordoba\\.vscode\\extensions\\salesforce.salesforcedx-vscode-lwc-46.17.0\\node_modules"
 }
