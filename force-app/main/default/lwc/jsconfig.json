@@ -1,7 +1,11 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "paths": {},
+        "paths": {
+            "c/createExpense": [
+                "createExpense/createExpense.js"
+            ]
+        },
         "experimentalDecorators": true
     },
     "include": [
