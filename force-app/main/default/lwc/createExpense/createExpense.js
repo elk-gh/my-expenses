@@ -4,13 +4,13 @@ import callSheets from "@salesforce/apex/createExpense.callSheets";
 
 export default class CreateExpense extends LightningElement {
   @track cost;
-  @track contacts;
+  @track response;
   @track error;
 
-  handleLoad() {
+  createExpense() {
     callSheets({ cost: "$cost" })
         .then(result => {
-            this.contacts = JSON.stringify(result);
+            this.response = JSON.stringify(result);
         })
         .catch(error => {
             this.error = JSON.stringify(error);

@@ -1,11 +1,11 @@
 <template>
-    <lightning-card title="ApexImperativeMethod" icon-name="custom:custom63">
+    <lightning-card title="Create Expense" icon-name="custom:custom63">
         <div class="slds-m-around_medium">
-            <input value={cost}/>
+            <input type="number" value={cost}/>
             <p class="slds-m-bottom_small">
-                <lightning-button label="Load Contacts" onclick={handleLoad}></lightning-button>
+                <lightning-button label="Create Expense" onclick={createExpense}></lightning-button>
             </p>
-            <template if:true={contacts}>
+            <template if:true={response}>
                     <p>{contacts}</p>
             </template>
             <template if:true={error}>
