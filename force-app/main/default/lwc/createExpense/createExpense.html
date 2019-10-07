@@ -1,16 +1,46 @@
 <template>
-    <lightning-card title="Create Expense" icon-name="custom:custom63">
-        <div class="slds-m-around_medium">
-            <input type="number" value={cost}/>
-            <p class="slds-m-bottom_small">
-                <lightning-button label="Create Expense" onclick={createExpense}></lightning-button>
-            </p>
-            <template if:true={response}>
-                    <p>{contacts}</p>
-            </template>
-            <template if:true={error}>
-                    <p>{error}</p>
-            </template>
-        </div>
-    </lightning-card>
+  <lightning-card title="Crear Gasto" icon-name="custom:custom63">
+    <div class="slds-m-around_medium">
+      <lightning-input label="Cantidad" value={cantidad} formatter="currency" step="100" placeholder = {cantidad} onchange={handleChangeCantidad}></lightning-input>
+      <lightning-input label="Relacionado con" value={relacionado} placeholder = {relacionado} onchange={handleChangeRelacionado}></lightning-input>
+      <lightning-combobox
+      name="Ingreso o Egreso"
+      label="Ingreso o Egreso"
+      value={direccion}
+      placeholder={direccion}
+      options={direcciones}
+      onchange={handleChangeDirecciones}
+    ></lightning-combobox>
+      <lightning-combobox
+      name="Tipo"
+      label="Tipo"
+      value={tipo}
+      placeholder={tipo}
+      options={tipos}
+      onchange={handleChangeTipos}
+    ></lightning-combobox>
+      <lightning-input label="Fecha" value={fecha} type="date" onchange={handleChangeFecha} required></lightning-input>
+      <lightning-input label="Descripcion" value={descripcion} onchange={handleChangeDescripcion} required></lightning-input>
+      <lightning-input label="Empresa" value={empresa} onchange={handleChangeEmpresa} required></lightning-input>
+      <lightning-combobox
+        name="Moneda"
+        label="Moneda"
+        value={moneda}
+        placeholder={moneda}
+        options={monedas}
+        onchange={handleChangeMonedas}
+        
+      ></lightning-combobox>
+      <template if:true={isUSD}>
+        <lightning-input label="Tasa de Cambio" value={tasa} onchange={handleChangeTasa} required={isUSD}></lightning-input>
+      </template>
+      
+      <p class="slds-m-bottom_small slds-m-top_small">
+        <lightning-button
+          label="Insertar Gasto"
+          onclick={createExpense}
+        ></lightning-button>
+      </p>
+    </div>
+  </lightning-card>
 </template>
