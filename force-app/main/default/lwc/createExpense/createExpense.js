@@ -63,16 +63,7 @@ export default class CreateExpense extends LightningElement {
   }
 
   handleResetForm() {
-    this.isUSD = false;
-    this.cantidad = "1.000";
-    this.relacionado = "Elkin";
-    this.direccion = "Egreso";
-    this.tipo = "Recurrente";
-    this.fecha = "";
-    this.descripcion = "";
-    this.empresa = "";
-    this.moneda = "COP";
-    this.tasa = "";
+    //TODO
   }
 
   handleFormValidation() {
